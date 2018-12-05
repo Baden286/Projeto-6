@@ -1,41 +1,48 @@
+<%@page import="modelo.bean.Usuario"%>
+<%@page import="modelo.dao.UsuarioDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        
         <title>Login</title>
+        <%@ include file="WEB-INF/jspf/css.jspf" %>
+        <%@ include file="WEB-INF/jspf/js.jspf" %>
     </head>
-    <body><br><br><br><br>
+    <body>
+        <%
+            if (request.getParameter("logar") != null) {
+                UsuarioDAO udao = new UsuarioDAO();
+                Usuario user = new Usuario();
 
-    <form action="cadastroAluno.jsp" style=" padding: 5px; margin-left: 400px; margin-right: 400px; background-color: rgb(0,0,0,0.5)">
-        <div>
-        <center> 
-        <h3 style="color: white">Seja Bem-Vindo!<br>
-                Faça o Login pa começar</h3></center><br><hr>    
+                user.setLogin(request.getParameter("login"));
+                user.setSenha(request.getParameter("senha"));
+
+                Usuario usuAutenticado = udao.checkLogin(user);
+
+                if (usuAutenticado != null) {
+//                    request.getRequestDispatcher("positiva.html").forward(request, response);
+                    session.setAttribute("user", usuAutenticado);
+                    response.sendRedirect("painel.jsp");
+                } else {
+                    response.sendRedirect("login.jsp");
+                }
+            }
+        %>
+        <div class="border w-25 m-auto p-5">
+            <form action="login.jsp">
+                <h3>Seja Bem-Vindo!</h3>
+                <div class="form-group">
+                    <label class="font-weight-bold">Login</label>
+                    <input type="text"  name="login" class="form-control" placeholder="Digite seu Login.">
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold">Senha</label>
+                    <input type="password" name="senha" class="form-control" placeholder="Digite seu Senha.">
+                </div>
+                <button type="submit" name="logar" class="btn btn-lg btn-primary">Logar</button>
+                <a href="cadastroUsuario.jsp" class="btn btn-lg btn-danger">Cadastre-se</a>
+            </form>
         </div>
-        
-        <div >
-        <label style="color: white">Login</label> <br>
-    <input type="text"  name="login" class="form-control">
-    </div>
-    <div >
-        <label style="color: white">Senha</label> <br>
-        <input type="password" name="senha" class="form-control"><br>
-    </div>
-        
-    <div>
-    <button type="submit" name="logar" class="btn btn-primary">Logar</button>
-    </div>
-    </form><br>
-
-    <center><div>
-            <a href="cadastroUsuario.jsp"><button type="submit" class="btn btn-danger">Cadastre-se</button></a>
-        </div></center>
-
     </body>
 </html>

@@ -16,37 +16,20 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%                     
-         if(request.getParameter("logar")!= null){
-         UsuarioDAO udao = new UsuarioDAO();
-         Usuario user = new Usuario();
-        
-         user.setLogin(request.getParameter("login"));
-         user.setSenha(request.getParameter("senha"));
-         
-        Usuario usuAutenticado = udao.checkLogin(user);
-                     
-        if(usuAutenticado != null){
-        //response.sendRedirect("positva.html");
-        request.getRequestDispatcher("positiva.html").forward(request,response);
-        }else{
-        response.sendRedirect("negativa.html");
-        }         
-        }            
-           
-         Aluno c = new Aluno();
-         AlunoDAO cli = new AlunoDAO();
+        <%
+            Aluno c = new Aluno();
+            AlunoDAO cli = new AlunoDAO();
 
-         if(request.getParameter("add")!= null){
-       //  c.setConta(Integer.parseInt(request.getParameter("conta")));
-         c.setNome(request.getParameter("nome"));
-         c.setCurso(request.getParameter("curso"));
-         c.setPeriodo(request.getParameter("periodo"));
-         cli.create(c);
-         response.sendRedirect("cadastroAluno.jsp");
-         }            
+            if (request.getParameter("add") != null) {
+                //  c.setConta(Integer.parseInt(request.getParameter("conta")));
+                c.setNome(request.getParameter("nome"));
+                c.setCurso(request.getParameter("curso"));
+                c.setPeriodo(request.getParameter("periodo"));
+                cli.create(c);
+                response.sendRedirect("cadastroAluno.jsp");
+            }
         %>
-      
+
         <div class="container">
             <h1>Gerenciamento de Alunos</h1>
             <fieldset>
@@ -57,34 +40,34 @@
                     Periodo:<br/><input type="text" name ="periodo"/> <br/>                                    
                     <br/><input type="submit" name="add" value="Adicionar" />
                 </form>
-              </fieldset>
-        
-        <table class="container" border="2">
-            <tr>
-                <th>Matricula</th> 
-                <th>Nome</th>  
-                <th>Curso</th> 
-                <th>Periodo</th>  
-                <th>Comandos</th>   
+            </fieldset>
 
-            </tr>
-            
-            <% for(int i = 0; i< AlunoDAO.read().size(); i++){  %>
-             <tr>
-             <th>100<%= AlunoDAO.read().get(i).getMatricula() %></th>
-             <th><%= AlunoDAO.read().get(i).getNome() %> </th>
-             <th><%= AlunoDAO.read().get(i).getCurso() %> </th>   
-             <th><%= AlunoDAO.read().get(i).getPeriodo() %></th> 
-             <th><button>Alterar</button><button>Excluir</button></th>    
+            <table class="container" border="2">
+                <tr>
+                    <th>Matricula</th> 
+                    <th>Nome</th>  
+                    <th>Curso</th> 
+                    <th>Periodo</th>  
+                    <th>Comandos</th>   
 
-            </tr>
+                </tr>
 
-               <% }%>
-                
-               <a href="login.jsp">volta</a>
-            
-        </table>
+                <% for (int i = 0; i < AlunoDAO.read().size(); i++) {%>
+                <tr>
+                    <th>100<%= AlunoDAO.read().get(i).getMatricula()%></th>
+                    <th><%= AlunoDAO.read().get(i).getNome()%> </th>
+                    <th><%= AlunoDAO.read().get(i).getCurso()%> </th>   
+                    <th><%= AlunoDAO.read().get(i).getPeriodo()%></th> 
+                    <th><button>Alterar</button><button>Excluir</button></th>    
+
+                </tr>
+
+                <% }%>
+
+                <a href="login.jsp">volta</a>
+
+            </table>
     </body>
 </html>
 
-          
+
