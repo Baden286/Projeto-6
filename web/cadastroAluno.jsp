@@ -1,13 +1,12 @@
-
-<%@page import="modelo.bean.Aluno"%>
-<%@page import="modelo.dao.AlunoDAO"%>
+<%@page import="br.com.fatecpg.escola.Aluno"%>
+<%@page import="br.com.fatecpg.escola.AlunoDAO"%>
 <%@page import="java.io.IOException"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="javax.swing.JOptionPane"%>
-<%@page import="modelo.dao.UsuarioDAO"%>
-<%@page import="modelo.bean.Usuario"%>
-<%@page import="modelo.bean.BD"%>
+<%@page import="br.com.fatecpg.escola.UsuarioDAO"%>
+<%@page import="br.com.fatecpg.escola.Usuario"%>
+<%@page import="br.com.fatecpg.escola.BD"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

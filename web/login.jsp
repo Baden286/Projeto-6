@@ -1,5 +1,5 @@
-<%@page import="modelo.bean.Usuario"%>
-<%@page import="modelo.dao.UsuarioDAO"%>
+<%@page import="br.com.fatecpg.escola.Usuario"%>
+<%@page import="br.com.fatecpg.escola.UsuarioDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

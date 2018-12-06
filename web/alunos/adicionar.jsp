@@ -1,5 +1,5 @@
-<%@page import="modelo.bean.Aluno"%>
-<%@page import="modelo.dao.AlunoDAO"%>
+<%@page import="br.com.fatecpg.escola.Aluno"%>
+<%@page import="br.com.fatecpg.escola.AlunoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -43,3 +43,4 @@
         </div>
     </body>
 </html>
+             
