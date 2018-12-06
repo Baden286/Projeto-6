@@ -43,8 +43,8 @@
                     <label class="font-weight-bold label">Senha</label>
                     <input type="pa ssword" name="senha" class="form-control" placeholder="Digite seu Senha.">
                 </div>
-                <button type="submit" name="logar" class="btn btn-login mt-4">Logar</button>
-                <a href="cadastroUsuario.jsp" class="btn btn-signup mt-4">Cadastre-se</a>
+                <button type="submit" name="logar" class="btn btn-login mt-5">Logar</button>
+                <a href="cadastroUsuario.jsp" class="btn btn-signup mt-5">Cadastre-se</a>
             </form>
       
        </div>
