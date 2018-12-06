@@ -16,3 +16,9 @@ CREATE TABLE aluno(
 	curso varchar(20) not null,
 	periodo varchar(20) not null
 );
+
+CREATE TABLE cursos(
+	id int not null primary key GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+	nome varchar(200) not null,
+	sigla varchar(20) not null
+);
