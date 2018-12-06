@@ -8,6 +8,8 @@
         <title>Login</title>
         <%@ include file="WEB-INF/jspf/css.jspf" %>
         <%@ include file="WEB-INF/jspf/js.jspf" %>
+        <link rel="stylesheet" href="style/style.css" crossorigin="anonymous">
+
     </head>
     <body>
         <%
@@ -29,20 +31,22 @@
                 }
             }
         %>
-        <div class="border w-25 m-auto p-5">
+        
+        <div class="loginPainel">
             <form action="login.jsp">
-                <h3>Seja Bem-Vindo!</h3>
-                <div class="form-group">
-                    <label class="font-weight-bold">Login</label>
+                <h3 class="title">Seja Bem-Vindo!</h3>
+                <div class="form-group mt-3">
+                    <label class="font-weight-bold label">Login</label>
                     <input type="text"  name="login" class="form-control" placeholder="Digite seu Login.">
                 </div>
                 <div class="form-group">
-                    <label class="font-weight-bold">Senha</label>
-                    <input type="password" name="senha" class="form-control" placeholder="Digite seu Senha.">
+                    <label class="font-weight-bold label">Senha</label>
+                    <input type="pa ssword" name="senha" class="form-control" placeholder="Digite seu Senha.">
                 </div>
-                <button type="submit" name="logar" class="btn btn-lg btn-primary">Logar</button>
-                <a href="cadastroUsuario.jsp" class="btn btn-lg btn-danger">Cadastre-se</a>
+                <button type="submit" name="logar" class="btn btn-login mt-4">Logar</button>
+                <a href="cadastroUsuario.jsp" class="btn btn-signup mt-4">Cadastre-se</a>
             </form>
-        </div>
+      
+       </div>
     </body>
 </html>
