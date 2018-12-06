@@ -31,7 +31,8 @@
                 }
             }
         %>
-        
+                <%@ include file="WEB-INF/jspf/menu.jspf" %>
+
         <div class="loginPainel">
             <form action="login.jsp">
                 <h3 class="title">Seja Bem-Vindo!</h3>
