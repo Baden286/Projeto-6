@@ -1,5 +1,4 @@
 <%@page import="br.com.fatecpg.escola.Usuario"%>
-<%@page import="br.com.fatecpg.escola.UsuarioDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,17 +13,12 @@
     <body>
         <%
             if (request.getParameter("logar") != null) {
-                UsuarioDAO udao = new UsuarioDAO();
-                Usuario user = new Usuario();
+                String login = request.getParameter("login");
+                String senha = request.getParameter("senha");
+                Usuario permitido = Usuario.checkLogin(login, senha);
 
-                user.setLogin(request.getParameter("login"));
-                user.setSenha(request.getParameter("senha"));
-
-                Usuario usuAutenticado = udao.checkLogin(user);
-
-                if (usuAutenticado != null) {
-//                    request.getRequestDispatcher("positiva.html").forward(request, response);
-                    session.setAttribute("user", usuAutenticado);
+                if (permitido != null) {
+                    session.setAttribute("user", permitido);
                     response.sendRedirect("painel.jsp");
                 } else {
                     response.sendRedirect("login.jsp");
