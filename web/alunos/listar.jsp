@@ -8,12 +8,13 @@
         <title>Listar Alunos</title>
     </head>
     <body>
+        <%@ include file="../WEB-INF/jspf/menu.jspf" %>
         <%
             AlunoDAO cli = new AlunoDAO();
         %>
         <div class="container">
             <h1>Listagem Alunos</h1>
-            <a href="add.jsp" class="btn btn-success">Cadastrar</a>
+            <a href="adicionar.jsp" class="btn btn-success">Cadastrar</a>
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
