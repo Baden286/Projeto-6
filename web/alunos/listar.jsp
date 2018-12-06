@@ -1,4 +1,4 @@
-<%@page import="br.com.fatecpg.escola.AlunoDAO"%>
+<%@page import="br.com.fatecpg.escola.Aluno"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,9 +9,6 @@
     </head>
     <body>
         <%@ include file="../WEB-INF/jspf/menu.jspf" %>
-        <%
-            AlunoDAO cli = new AlunoDAO();
-        %>
         <div class="container">
             <h1>Listagem Alunos</h1>
             <a href="adicionar.jsp" class="btn btn-success">Cadastrar</a>
@@ -27,12 +24,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% for (int i = 0; i < AlunoDAO.read().size(); i++) {%>
+                    <% for (Aluno a : Aluno.getAlunos()) {%>
                     <tr>
-                        <td>100<%= AlunoDAO.read().get(i).getMatricula()%></td>
-                        <td><%= AlunoDAO.read().get(i).getNome()%> </td>
-                        <td><%= AlunoDAO.read().get(i).getCurso()%> </td>
-                        <td><%= AlunoDAO.read().get(i).getPeriodo()%></td>
+                        <td><%= a.getMatricula()%></td>
+                        <td><%= a.getNome()%> </td>
+                        <td><%= a.getCurso()%> </td>
+                        <td><%= a.getPeriodo()%></td>
                         <td>
                             <button class="btn btn-warning">Alterar</button>
                             <button class="btn btn-danger">Excluir</button>

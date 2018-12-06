@@ -44,15 +44,8 @@ public class AlunoDAO {
             rs = stmt.executeQuery();
             
             while (rs.next()){
-                Aluno p = new Aluno();
-                
-                p.setMatricula(rs.getInt("matricula"));                
-                p.setNome(rs.getString("nome"));
-                p.setCurso(rs.getString("curso"));
-                p.setPeriodo(rs.getString("periodo"));
-                alunos.add(p);                           
-                
-               
+                Aluno p = new Aluno(rs.getInt("matricula"), rs.getString("nome"), rs.getString("curso"), rs.getString("periodo"));
+                alunos.add(p);
             }
         } catch (SQLException ex) {
             throw new RuntimeException("erro read " + ex);          

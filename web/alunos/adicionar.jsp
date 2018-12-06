@@ -1,5 +1,4 @@
 <%@page import="br.com.fatecpg.escola.Aluno"%>
-<%@page import="br.com.fatecpg.escola.AlunoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,12 +11,11 @@
         <%
             
             if (request.getParameter("adicionar") != null) {
-                Aluno c = new Aluno();
-                AlunoDAO cli = new AlunoDAO();
-                c.setNome(request.getParameter("nome"));
-                c.setCurso(request.getParameter("curso"));
-                c.setPeriodo(request.getParameter("periodo"));
-                cli.create(c);
+                String nome = request.getParameter("nome");
+                String curso = request.getParameter("curso");
+                String periodo = request.getParameter("periodo");
+                Aluno a = new Aluno(0, nome, curso, periodo);
+                a.add(nome, curso, periodo);
                 response.sendRedirect("listar.jsp");
             }
         %>
