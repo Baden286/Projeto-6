@@ -29,14 +29,14 @@
                 <tbody>
                     <% for (int i = 0; i < AlunoDAO.read().size(); i++) {%>
                     <tr>
-                        <th>100<%= AlunoDAO.read().get(i).getMatricula()%></th>
-                        <th><%= AlunoDAO.read().get(i).getNome()%> </th>
-                        <th><%= AlunoDAO.read().get(i).getCurso()%> </th>
-                        <th><%= AlunoDAO.read().get(i).getPeriodo()%></th>
-                        <th>
+                        <td>100<%= AlunoDAO.read().get(i).getMatricula()%></td>
+                        <td><%= AlunoDAO.read().get(i).getNome()%> </td>
+                        <td><%= AlunoDAO.read().get(i).getCurso()%> </td>
+                        <td><%= AlunoDAO.read().get(i).getPeriodo()%></td>
+                        <td>
                             <button class="btn btn-warning">Alterar</button>
                             <button class="btn btn-danger">Excluir</button>
-                        </th>
+                        </td>
                     </tr>
                     <% }%>
                 </tbody>

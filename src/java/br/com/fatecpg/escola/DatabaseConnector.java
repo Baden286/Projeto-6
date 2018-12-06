@@ -34,8 +34,8 @@ public class DatabaseConnector {
         ResultSet rs = stmt.executeQuery();
         while (rs.next()) {
             Object row[] = new Object[rs.getMetaData().getColumnCount()];
-            for (int i = 0; i <= rs.getMetaData().getColumnCount(); i++) {
-                row[i] = rs.getObject(i);
+            for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
+                row[i] = rs.getObject(i + 1);
             }
             list.add(row);
         }
@@ -46,7 +46,6 @@ public class DatabaseConnector {
     }
 
     public static void execute(String SQL, Object[] parameters) throws Exception {
-        ArrayList<Object[]> list = new ArrayList<>();
         Class.forName(DRIVER);
         Connection con = DriverManager.getConnection(URL, USER, PASS);
         PreparedStatement stmt = con.prepareStatement(SQL);

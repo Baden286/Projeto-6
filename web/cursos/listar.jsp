@@ -15,24 +15,22 @@
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th>Matricula</th> 
-                        <th>Nome</th>  
-                        <th>Curso</th> 
-                        <th>Periodo</th>  
-                        <th>Comandos</th>   
-
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Sigla</th>
+                        <th>Comandos</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% for (Curso c : Curso.getCursos()) { %>
+                    <% for (Curso c : Curso.getCursos()) {%>
                     <tr>
-                        <th>100<%= c.getId()%></th>
-                        <th><%= c.getNome()%> </th>
-                        <th><%= c.getSigla()%> </th>
-                        <th>
+                        <td><%= c.getId()%></td>
+                        <td><%= c.getNome()%> </td>
+                        <td><%= c.getSigla()%> </td>
+                        <td>
                             <button class="btn btn-warning">Alterar</button>
                             <button class="btn btn-danger">Excluir</button>
-                        </th>
+                        </td>
                     </tr>
                     <% }%>
                 </tbody>

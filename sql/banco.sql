@@ -1,3 +1,4 @@
+DROP TABLE usuario;
 -- Criando Tabela Usuario
 CREATE TABLE usuario(
 	id int not null primary key GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), 
@@ -5,10 +6,11 @@ CREATE TABLE usuario(
 	senha varchar(20) not null
 );
 
--- Inserindo usuario
+-- Inserindo usuarios
 INSERT INTO usuario Values
 (default,'admin', 'admin');
 
+DROP TABLE aluno;
 -- Criando Tabela Aluno
 CREATE TABLE aluno(
 	matricula int not null primary key GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
@@ -17,8 +19,16 @@ CREATE TABLE aluno(
 	periodo varchar(20) not null
 );
 
-CREATE TABLE cursos(
+DROP TABLE curso;
+CREATE TABLE curso(
 	id int not null primary key GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
 	nome varchar(200) not null,
 	sigla varchar(20) not null
 );
+
+-- Inserindo cursos
+INSERT INTO curso Values
+(default, 'Análise e Desenvolvimento de Sistemas', 'ADS'),
+(default, 'Processos Químicos', 'PQ'),
+(default, 'Comércio Exterior', 'COMEX'),
+(default, 'Gestão Empresarial', 'GE');
