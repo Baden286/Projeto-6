@@ -1,4 +1,4 @@
-package modelo.bean;
+package br.com.fatecpg.escola;
 
 public class Aluno {
     

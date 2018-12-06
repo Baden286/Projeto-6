@@ -1,18 +1,18 @@
-package modelo.dao;
+package br.com.fatecpg.escola;
 
-import connection.ConnectionFactory;
+import br.com.fatecpg.escola.DatabaseConnector;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import modelo.bean.Aluno;
+import br.com.fatecpg.escola.Aluno;
 
 public class AlunoDAO {
     
     public void create(Aluno c){
-        Connection con = ConnectionFactory.getConexao();
+        Connection con = DatabaseConnector.getConexao();
         PreparedStatement stmt = null;
        
         try {
@@ -32,7 +32,7 @@ public class AlunoDAO {
     }
      public static List<Aluno> read(){
                  
-                Connection con = ConnectionFactory.getConexao();
+                Connection con = DatabaseConnector.getConexao();
                 PreparedStatement stmt = null;
                 ResultSet rs = null;
                 

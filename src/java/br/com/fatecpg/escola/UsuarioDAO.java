@@ -1,20 +1,20 @@
-package modelo.dao;
+package br.com.fatecpg.escola;
 
-import connection.ConnectionFactory;
+import br.com.fatecpg.escola.DatabaseConnector;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import modelo.bean.Usuario; 
+import br.com.fatecpg.escola.Usuario; 
 
 
 public class UsuarioDAO {
     
     public Usuario checkLogin(Usuario usuario){
                  
-                Connection con = ConnectionFactory.getConexao();
+                Connection con = DatabaseConnector.getConexao();
                 PreparedStatement stmt = null;
                 ResultSet rs = null;               
                 Usuario usuRetorno = null;               
@@ -41,7 +41,7 @@ public class UsuarioDAO {
         
         }
         public void create(Usuario u){
-        Connection con = ConnectionFactory.getConexao();
+        Connection con = DatabaseConnector.getConexao();
         PreparedStatement stmt = null;
        
         try {
@@ -59,7 +59,7 @@ public class UsuarioDAO {
         }
         public static List<Usuario> read(){
                   
-                Connection con = ConnectionFactory.getConexao();
+                Connection con = DatabaseConnector.getConexao();
                 PreparedStatement stmt = null;
                 ResultSet rs = null;
                 
