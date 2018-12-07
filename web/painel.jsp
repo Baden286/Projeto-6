@@ -8,6 +8,11 @@
     </head>
     <body>
         <%@ include file="WEB-INF/jspf/menu.jspf" %>
-        <h1>Hello World!</h1>
+        <div class="container">
+            <h1>Hello World!</h1>
+            <a href="alunos/listar.jsp" class="btn btn-primary">Alunos</a>
+            <a href="cursos/listar.jsp" class="btn btn-primary">Cursos</a>
+            <a href="usuarios/listar.jsp" class="btn btn-primary">Usuários</a>
+        </div>
     </body>
 </html>
