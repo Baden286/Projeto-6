@@ -49,7 +49,7 @@ public class Curso {
         }
         return cursos;
     }
-    
+
     public static Curso getCurso(int id) throws Exception {
         String SQL = "SELECT * FROM curso WHERE id = ?";
         Object parameters[] = {id};

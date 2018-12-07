@@ -1,3 +1,4 @@
+<%@page import="br.com.fatecpg.escola.Curso"%>
 <%@page import="br.com.fatecpg.escola.Aluno"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,15 +25,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% for (Aluno a : Aluno.getAlunos()) {%>
+                    <%
+                        Curso c = null;
+                        for (Aluno a : Aluno.getAlunos()) {
+                            c = Curso.getCurso(a.getCurso());
+                    %>
                     <tr>
                         <td><%= a.getMatricula()%></td>
                         <td><%= a.getNome()%> </td>
-                        <td><%= a.getCurso()%> </td>
+                        <td><%= c.getNome()%> </td>
                         <td><%= a.getPeriodo()%></td>
                         <td>
-                            <button class="btn btn-warning">Alterar</button>
-                            <button class="btn btn-danger">Excluir</button>
+                            <form action="editar.jsp">
+                                <input type="hidden" name="matricula" value="<%= a.getMatricula() %>">
+                                <button class="btn btn-warning" type="submit">Alterar</button>
+                            </form>
+                            <form action="excluir.jsp">
+                                <input type="hidden" name="matricula" value="<%= a.getMatricula() %>">
+                                <button class="btn btn-danger" name="excluir" type="submit">Excluir</button>
+                            </form>
                         </td>
                     </tr>
                     <% }%>

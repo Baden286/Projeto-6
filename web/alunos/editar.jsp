@@ -10,7 +10,9 @@
     </head>
     <body>
         <%
-            if (request.getParameter("adicionar") != null) {
+            int matricula = Integer.parseInt(request.getParameter("matricula"));
+            Aluno a = Aluno.getAluno(matricula);
+            if (request.getParameter("editar") != null) {
                 String nome = request.getParameter("nome");
                 int curso = Integer.parseInt(request.getParameter("curso"));
                 String periodo = request.getParameter("periodo");
@@ -20,11 +22,11 @@
         %>
         <%@ include file="../WEB-INF/jspf/menu.jspf" %>
         <div class="container">
-            <h1>Cadastrar Aluno</h1>
+            <h1>Editar Aluno</h1>
             <form>
                 <div class="form-group">
                     <label>Nome</label>
-                    <input type="text" name="nome" class="form-control">
+                    <input type="text" name="nome" class="form-control" value="<%= a.getNome() %>">
                 </div>
                 <div class="form-group">
                     <label>Curso</label>
@@ -32,7 +34,7 @@
                         <%
                             for (Curso c : Curso.getCursos()) {
                         %>
-                        <option value="<%= c.getId()%>"><%= c.getNome()%></option>
+                        <option value="<%= c.getId()%>" <% if (a.getCurso() == c.getId()) { %>selected<% } %> ><%= c.getNome()%></option>
                         <%
                             }
                         %>
@@ -40,10 +42,10 @@
                 </div>
                 <div class="form-group">
                     <label>Período</label>
-                    <input type="text" name="periodo" class="form-control">
+                    <input type="text" name="periodo" class="form-control" value="<%= a.getPeriodo() %>">
                 </div>
                 <button type="reset" class="btn btn-secondary">Limpar</button>
-                <button type="submit" name="adicionar" class="btn btn-primary">Salvar</button>
+                <button type="submit" name="editar" class="btn btn-primary">Salvar</button>
             </form>
         </div>
     </body>
