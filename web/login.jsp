@@ -1,5 +1,10 @@
 <%@page import="br.com.fatecpg.escola.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    if (session.getAttribute("user") != null) {
+        response.sendRedirect("painel.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
