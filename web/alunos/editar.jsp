@@ -16,7 +16,7 @@
                 String nome = request.getParameter("nome");
                 int curso = Integer.parseInt(request.getParameter("curso"));
                 String periodo = request.getParameter("periodo");
-                Aluno.add(nome, curso, periodo);
+                Aluno.edit(matricula, nome, curso, periodo);
                 response.sendRedirect("listar.jsp");
             }
         %>
@@ -24,6 +24,7 @@
         <div class="container">
             <h1>Editar Aluno</h1>
             <form>
+                <input type="hidden" name="matricula" value="<%= a.getMatricula() %>">
                 <div class="form-group">
                     <label>Nome</label>
                     <input type="text" name="nome" class="form-control" value="<%= a.getNome() %>">

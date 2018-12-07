@@ -78,6 +78,12 @@ public class Aluno {
         Object parameters[] = {nome, curso, periodo};
         DatabaseConnector.execute(SQL, parameters);
     }
+    
+    public static void edit(int id, String nome, int curso, String periodo) throws Exception {
+        String SQL = "UPDATE aluno SET nome = ?, curso = ?, periodo = ? WHERE matricula = ?";
+        Object parameters[] = {nome, curso, periodo, id};
+        DatabaseConnector.execute(SQL, parameters);
+    }
 
     public static void remove(long id) throws Exception {
         String SQL = "DELETE FROM aluno WHERE matricula = ?";
