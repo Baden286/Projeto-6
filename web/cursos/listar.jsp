@@ -28,8 +28,14 @@
                         <td><%= c.getNome()%> </td>
                         <td><%= c.getSigla()%> </td>
                         <td>
-                            <button class="btn btn-warning">Alterar</button>
-                            <button class="btn btn-danger">Excluir</button>
+                            <form action="editar.jsp">
+                                <input type="hidden" name="id" value="<%= c.getId() %>">
+                                <button class="btn btn-warning" type="submit">Alterar</button>
+                            </form>
+                            <form action="excluir.jsp">
+                                <input type="hidden" name="id" value="<%= c.getId() %>">
+                                <button class="btn btn-danger" name="excluir" type="submit">Excluir</button>
+                            </form>
                         </td>
                     </tr>
                     <% }%>
