@@ -1,6 +1,6 @@
 <%@page import="br.com.fatecpg.escola.Aluno"%>
 <%@page import="br.com.fatecpg.escola.Curso"%>
-<%@ include file="WEB-INF/jspf/autenticacao.jspf" %>
+<%@ include file="../WEB-INF/jspf/autenticacao.jspf" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
