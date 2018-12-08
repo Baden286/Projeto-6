@@ -41,3 +41,40 @@ input, select, textarea{
 h1, h2, h3, h4, p, label{
     font-family: 'Roboto', sans-serif;
 }
+
+.cardsHome{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #6699ff;
+    padding: 20px;
+}
+
+#icon-card-aluno {
+  background-image: url("../imgs/study.svg");
+  background-repeat: no-repeat;
+  margin-top: 2em;
+  margin-left: 2em;
+  cursor: pointer;
+}
+
+#icon-card-cursos {
+  background-image: url("../imgs/study.svg");
+  background-repeat: no-repeat;
+  margin-top: 2em;
+  margin-left: 2em;
+  cursor: pointer;
+}
+
+#icon-card-user {
+  background-image: url("../imgs/study.svg");
+  background-repeat: no-repeat;
+  margin-top: 2em;
+  margin-left: 2em;
+  cursor: pointer;
+}
+
+
+h3{
+    color: white;
+}
