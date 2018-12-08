@@ -6,15 +6,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@ include file="../WEB-INF/jspf/css.jspf" %>
+         <link rel="stylesheet" href="style/style.css" crossorigin="anonymous">
+
         <title>Listar Usuários</title>
     </head>
     <body>
         <%@ include file="../WEB-INF/jspf/menu.jspf" %>
         <div class="container">
-            <h1>Listagem de Usuários</h1>
-            <a href="adicionar.jsp" class="btn btn-success">Cadastrar</a>
-            <table class="table table-bordered table-hover">
-                <thead>
+              <h1 class="mt-5 mb-5">Listagem de Usuários</h1>
+            <table class="table table-hover">
+             <thead class="thead-dark">
                     <tr>
                         <th>Código</th>
                         <th>Login</th>
@@ -40,6 +41,8 @@
                     <% }%>
                 </tbody>
             </table>
+                            <a href="adicionar.jsp" class="btn btn-success">Cadastrar</a>
+
         </div>
     </body>
 </html>

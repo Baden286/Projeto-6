@@ -7,6 +7,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@ include file="../WEB-INF/jspf/css.jspf" %>
+                <link rel="stylesheet" href="style/style.css" crossorigin="anonymous">
+
         <title>Listar Alunos</title>
     </head>
     <body>
@@ -28,7 +30,7 @@
                 <input type="hidden" name="matricula" value="<%= a.getMatricula() %>">
                 <div class="form-group">
                     <label>Nome</label>
-                    <input type="text" name="nome" class="form-control" value="<%= a.getNome() %>">
+                    <input type="text" name="nome" class="form-control" value="<%= a.getNome() %>" required>
                 </div>
                 <div class="form-group">
                     <label>Curso</label>
@@ -44,10 +46,10 @@
                 </div>
                 <div class="form-group">
                     <label>Período</label>
-                    <input type="text" name="periodo" class="form-control" value="<%= a.getPeriodo() %>">
+                    <input type="text" name="periodo" class="form-control" value="<%= a.getPeriodo() %>" required>
                 </div>
-                <button type="reset" class="btn btn-secondary">Limpar</button>
-                <button type="submit" name="editar" class="btn btn-primary">Salvar</button>
+                <button type="reset" class="btn btn-signup">Limpar</button>
+                <button type="submit" name="editar" class="btn btn-login">Salvar</button>
             </form>
         </div>
     </body>

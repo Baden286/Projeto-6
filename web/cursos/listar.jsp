@@ -11,10 +11,9 @@
     <body>
         <%@ include file="../WEB-INF/jspf/menu.jspf" %>
         <div class="container">
-            <h1>Listagem Alunos</h1>
-            <a href="adicionar.jsp" class="btn btn-success">Cadastrar</a>
-            <table class="table table-bordered table-hover">
-                <thead>
+            <h1 class="mt-5 mb-5">Listagem Alunos</h1>
+             <table class="table table-hover">
+             <thead class="thead-dark">
                     <tr>
                         <th>Código</th>
                         <th>Nome</th>
@@ -42,6 +41,8 @@
                     <% }%>
                 </tbody>
             </table>
+          <a href="adicionar.jsp" class="btn btn-success">Cadastrar</a>
+
         </div>
     </body>
 </html>

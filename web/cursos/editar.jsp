@@ -7,6 +7,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
         <%@ include file="../WEB-INF/jspf/css.jspf" %>
+        <link rel="stylesheet" href="style/style.css" crossorigin="anonymous">
+
         <title>Listar Cursos</title>
     </head>
     <body>

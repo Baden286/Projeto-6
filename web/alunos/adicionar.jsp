@@ -7,6 +7,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@ include file="../WEB-INF/jspf/css.jspf" %>
+                <link rel="stylesheet" href="style/style.css" crossorigin="anonymous">
+
         <title>Listar Alunos</title>
     </head>
     <body>
@@ -25,7 +27,7 @@
             <form>
                 <div class="form-group">
                     <label>Nome</label>
-                    <input type="text" name="nome" class="form-control">
+                    <input type="text" name="nome" class="form-control" required="true">
                 </div>
                 <div class="form-group">
                     <label>Curso</label>
@@ -41,10 +43,10 @@
                 </div>
                 <div class="form-group">
                     <label>Período</label>
-                    <input type="text" name="periodo" class="form-control">
+                    <input type="text" name="periodo" class="form-control" required>
                 </div>
-                <button type="reset" class="btn btn-secondary">Limpar</button>
-                <button type="submit" name="adicionar" class="btn btn-primary">Salvar</button>
+                <button type="reset" class="btn btn-signup">Limpar</button>
+                <button type="submit" name="adicionar" class="btn btn-login">Salvar</button>
             </form>
         </div>
     </body>
