@@ -37,11 +37,11 @@
                 <h3 class="title">Seja Bem-Vindo!</h3>
                 <div class="form-group mt-3">
                     <label class="font-weight-bold label">Login</label>
-                    <input type="text"  name="login" class="form-control" placeholder="Digite seu Login.">
+                    <input type="text"  name="login" class="form-control" placeholder="Digite seu Login." required>
                 </div>
                 <div class="form-group">
                     <label class="font-weight-bold label">Senha</label>
-                    <input type="pa ssword" name="senha" class="form-control" placeholder="Digite seu Senha.">
+                    <input type="password" name="senha" class="form-control" placeholder="Digite seu Senha." required>
                 </div>
                 <button type="submit" name="logar" class="btn btn-login mt-5">Logar</button>
                 <a href="cadastroUsuario.jsp" class="btn btn-signup mt-5">Cadastre-se</a>
