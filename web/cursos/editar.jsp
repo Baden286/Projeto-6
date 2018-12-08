@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
         <%@ include file="../WEB-INF/jspf/css.jspf" %>
-        <link rel="stylesheet" href="style/style.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="../style/style.css" crossorigin="anonymous">
 
         <title>Listar Cursos</title>
     </head>
@@ -37,8 +37,8 @@
                     <label>Sigla</label>
                     <input type="text" name="sigla" class="form-control" value="<%= c.getSigla() %>">
                 </div>
-                <button type="reset" class="btn btn-secondary">Limpar</button>
-                <button type="submit" name="editar" class="btn btn-primary">Salvar</button>
+                <button type="reset" class="btn btn-signup">Limpar</button>
+                <button type="submit" name="editar" class="btn btn-login">Salvar</button>
             </form>
         </div>
     </body>

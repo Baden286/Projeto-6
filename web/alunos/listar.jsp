@@ -7,7 +7,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@ include file="../WEB-INF/jspf/css.jspf" %>
-                <link rel="stylesheet" href="style/style.css" crossorigin="anonymous">
+       <link rel="stylesheet" href="../style/style.css" crossorigin="anonymous">
 
         <title>Listar Alunos</title>
     </head>
@@ -40,18 +40,18 @@
                         <td>
                             <form action="editar.jsp">
                                 <input type="hidden" name="matricula" value="<%= a.getMatricula() %>">
-                                <button class="btn btn-warning right" type="submit">Alterar</button>
+                                <button class="btn btn-warning" type="submit">Alterar</button>
                             </form>
                             <form action="excluir.jsp">
                                 <input type="hidden" name="matricula" value="<%= a.getMatricula() %>">
-                                <button class="btn btn-danger right" name="excluir" type="submit">Excluir</button>
+                                <button class="btn btn-danger" name="excluir" type="submit">Excluir</button>
                             </form>
                         </td>
                     </tr>
                     <% }%>
                 </tbody>
             </table>
-           <a href="adicionar.jsp" class="btn btn-success right">Cadastrar</a>
+           <a href="adicionar.jsp" class="btn btn-success">Cadastrar</a>
 
         </div>
     </body>
