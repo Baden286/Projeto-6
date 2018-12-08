@@ -93,7 +93,7 @@ h3{
 .inline{
     display: inline-flex;
 }
-.right{
-    float: right;
+.left{
+    float: left;
     
 }

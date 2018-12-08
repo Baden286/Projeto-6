@@ -30,14 +30,16 @@
                         <td><%= u.getId()%></td>
                         <td><%= u.getLogin()%> </td>
                         <td>
+                            <div class="row">
                             <form action="editar.jsp">
                                 <input type="hidden" name="id" value="<%= u.getId() %>">
-                                <button class="btn btn-warning" type="submit">Alterar</button>
+                                <button class="btn btn-warning left " type="submit">Alterar</button>
                             </form>
                             <form action="excluir.jsp">
                                 <input type="hidden" name="id" value="<%= u.getId() %>">
-                                <button class="btn btn-danger" name="excluir" type="submit">Excluir</button>
+                                <button class="btn btn-danger left" name="excluir" type="submit">Excluir</button>
                             </form>
+                                </div>
                         </td>
                     </tr>
                     <% }%>
