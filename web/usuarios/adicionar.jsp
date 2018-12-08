@@ -19,15 +19,15 @@
         %>
         <%@ include file="../WEB-INF/jspf/menu.jspf" %>
         <div class="container">
-            <h1>Cadastrar Usuario</h1>
+            <h1 class="display-4 mt-5 mb-3">Cadastrar Usuario</h1>
             <form>
                 <div class="form-group">
                     <label>Nome</label>
-                    <input type="text" name="login" class="form-control">
+                    <input type="text" name="login" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label>Senha</label>
-                    <input type="password" name="senha" class="form-control">
+                    <input type="password" name="senha" class="form-control" required>
                 </div>
                 <button type="reset" class="btn btn-secondary">Limpar</button>
                 <button type="submit" name="adicionar" class="btn btn-primary">Salvar</button>

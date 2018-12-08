@@ -25,7 +25,7 @@
         %>
         <%@ include file="../WEB-INF/jspf/menu.jspf" %>
         <div class="container">
-            <h1>Editar Aluno</h1>
+            <h1 class="mt-5 mb-3">Editar Aluno</h1>
             <form>
                 <input type="hidden" name="matricula" value="<%= a.getMatricula() %>">
                 <div class="form-group">

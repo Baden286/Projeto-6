@@ -23,7 +23,7 @@
         %>
         <%@ include file="../WEB-INF/jspf/menu.jspf" %>
         <div class="container">
-            <h1>Cadastrar Aluno</h1>
+            <h1 class="display-4 mt-5 mb-3">Cadastrar Aluno</h1>
             <form>
                 <div class="form-group">
                     <label>Nome</label>
@@ -45,8 +45,8 @@
                     <label>Período</label>
                     <input type="text" name="periodo" class="form-control" required>
                 </div>
-                <button type="reset" class="btn btn-signup">Limpar</button>
-                <button type="submit" name="adicionar" class="btn btn-login">Salvar</button>
+                <button type="reset" class="btn btn-secondary">Limpar</button>
+                <button type="submit" name="adicionar" class="btn btn-primary">Salvar</button>
             </form>
         </div>
     </body>
