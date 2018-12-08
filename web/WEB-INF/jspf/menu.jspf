@@ -14,7 +14,7 @@
                 if (session.getAttribute("user") != null) {
             %>
             <li class="nav-item">
-                <a class="nav-link" href="logout.jsp">Sair</a>
+                <a class="nav-link" href="http://localhost:8080/Web_Aluno/logout.jsp">Sair</a>
             </li>
             <%}%>
         </ul>
