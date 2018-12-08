@@ -13,7 +13,7 @@
         <%@ include file="WEB-INF/jspf/css.jspf" %>
         <%@ include file="WEB-INF/jspf/js.jspf" %>
         <link rel="stylesheet" href="style/style.css" crossorigin="anonymous">
-
+        
     </head>
     <body>
         <%

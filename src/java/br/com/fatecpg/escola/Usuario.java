@@ -49,10 +49,29 @@ public class Usuario {
         }
         return usuarios;
     }
+    
+    public static Usuario getUsuario(int id) throws Exception {
+        String SQL = "SELECT * FROM usuario WHERE id = ?";
+        Object parameters[] = {id};
+        ArrayList<Object[]> list = DatabaseConnector.getQuery(SQL, parameters);
+        if (list.isEmpty()){
+            return null;
+        } else {
+            Object row[] = list.get(0);
+            Usuario u = new Usuario((int) row[0], (String) row[1], (String) row[2]);
+            return u;
+        }
+    }
 
     public static void add(String login, String senha) throws Exception {
         String SQL = "INSERT INTO usuario VALUES (default, ? , ?)";
         Object parameters[] = {login, senha};
+        DatabaseConnector.execute(SQL, parameters);
+    }
+    
+    public static void edit(int id, String login, String senha) throws Exception {
+        String SQL = "UPDATE usuario SET login = ?, senha = ? WHERE id = ?";
+        Object parameters[] = {login, senha, id};
         DatabaseConnector.execute(SQL, parameters);
     }
 
