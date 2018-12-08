@@ -44,7 +44,6 @@
                     <input type="password" name="senha" class="form-control" placeholder="Digite seu Senha." required>
                 </div>
                 <button type="submit" name="logar" class="btn btn-login mt-5">Logar</button>
-                <a href="cadastroUsuario.jsp" class="btn btn-signup mt-5">Cadastre-se</a>
             </form>
       
        </div>
